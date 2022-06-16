@@ -72,7 +72,7 @@ common/autoinstallers/*/.npmrc
 .env.development.local
 .env.test.local
 .env.production.local
-/build
-/coverage
-/.pnp
+build/
+coverage/
+.pnp
 .pnp.js
