@@ -392,8 +392,12 @@
    */
   "projects": [
     {
-      "packageName": "react-redux",
-      "projectFolder": "packages/react-redux"
+      "packageName": "test-react-app",
+      "projectFolder": "packages/test-react-app"
+    },
+    {
+      "packageName": "test-react-redux",
+      "projectFolder": "packages/test-react-redux"
     }
 
     // {
