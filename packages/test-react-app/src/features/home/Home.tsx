@@ -3,11 +3,11 @@ import s from './Home.module.css';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <main>
       <Link to="/health-detail" className={s.Link}>
         goto /health-detail
       </Link>
-    </div>
+    </main>
   );
 };
 export default Home;
