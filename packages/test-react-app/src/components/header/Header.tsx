@@ -7,16 +7,15 @@ import s from './Header.module.css';
 // TODO: 根据路由动态切换 后退、返回首页 按钮的显示状态
 // TODO: 根据路由 meta 信息切换 title 显示
 
+const getShowBackButton = (pathname: string) => pathname !== '/';
+const getShowHomeButton = (pathname: string) => pathname !== '/';
+
 const Left: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  let showBackButton = true;
-  let showHomeButton = true;
-  if (location.pathname === '/') {
-    showBackButton = false;
-    showHomeButton = false;
-  }
+  const showBackButton = getShowBackButton(location.pathname);
+  const showHomeButton = getShowHomeButton(location.pathname);
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
