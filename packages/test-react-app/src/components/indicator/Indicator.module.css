@@ -9,3 +9,7 @@
   border-color: #ccc;
   border-radius: 40px;
 }
+
+.Indicator:focus {
+  outline: none;
+}

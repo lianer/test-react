@@ -1,3 +1,4 @@
+import React, { ChangeEventHandler } from 'react';
 import s from './Indicator.module.css';
 
 enum State {
@@ -26,23 +27,27 @@ const getColor = (state: State): string => {
   }
 };
 
-const Indicator: React.FC<{ value: number; max: number; min: number }> = function ({
-  value,
-  max,
-  min,
-}) {
-  const color = getColor(getState(value, max, min));
-
-  return (
-    <span
-      className={s.Indicator}
-      style={{
-        borderColor: color,
-      }}
-    >
-      {value}
-    </span>
-  );
+type IndicatorProps = {
+  value: number;
+  max: number;
+  min: number;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
+
+const Indicator: React.FC<IndicatorProps> = React.memo(
+  ({ value, max, min, onChange = () => {} }) => {
+    const color = getColor(getState(value, max, min));
+    return (
+      <input
+        className={s.Indicator}
+        defaultValue={value}
+        onChange={onChange}
+        style={{
+          borderColor: color,
+        }}
+      ></input>
+    );
+  }
+);
 
 export default Indicator;
