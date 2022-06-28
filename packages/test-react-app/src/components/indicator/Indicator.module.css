@@ -8,6 +8,7 @@
   border-style: solid;
   border-color: #ccc;
   border-radius: 40px;
+  font-size: 16px;
 }
 
 .Indicator:focus {

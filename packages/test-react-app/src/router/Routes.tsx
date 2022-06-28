@@ -1,4 +1,5 @@
 import { RouteObject, useRoutes } from 'react-router-dom';
+import EditItem from '../features/health/EditItem';
 import HealthDetail from '../features/health/HealthDetail';
 import Home from '../features/home/Home';
 import App from '../features/layout/App';
@@ -29,10 +30,17 @@ const routes: ExtendedRouteObject[] = [
         },
       },
       {
-        path: 'health-detail',
+        path: '/health-detail',
         element: <HealthDetail />,
         meta: {
           title: '体检指标',
+        },
+      },
+      {
+        path: '/health-detail/edit-item/:id',
+        element: <EditItem />,
+        meta: {
+          title: '调整指标范围',
         },
       },
     ],
