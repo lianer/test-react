@@ -17,6 +17,7 @@ importers:
       '@types/react-dom': ^18.0.5
       '@types/react-helmet': ~6.1.5
       antd-mobile: ~5.16.1
+      antd-mobile-icons: ~0.3.0
       normalize.css: ~8.0.1
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -37,6 +38,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@types/react-helmet': 6.1.5
       antd-mobile: 5.16.1_react-dom@18.2.0+react@18.2.0
+      antd-mobile-icons: 0.3.0
       normalize.css: 8.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -2062,7 +2064,7 @@ packages:
     dependencies:
       immer: 9.0.15
       react: 18.2.0
-      react-redux: 8.0.2_02281ab33ce12b3563251e3b38b1f61b
+      react-redux: 8.0.2_2e54d3edf432fbb4bff79127751ba06a
       redux: 4.2.0
       redux-thunk: 2.4.1_redux@4.2.0
       reselect: 4.1.6

@@ -9,11 +9,17 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
+.Left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
 .Button {
   --hotspot: 30px;
-  width: 50px;
+  width: 40px;
   height: var(--hotspot);
-  font-size: 12px;
+  font-size: 18px;
   line-height: var(--hotspot);
   text-align: center;
 }

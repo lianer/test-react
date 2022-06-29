@@ -21,7 +21,8 @@
     "react-helmet": "~6.1.0",
     "@reduxjs/toolkit": "~1.8.2",
     "react-redux": "~8.0.2",
-    "antd-mobile": "~5.16.1"
+    "antd-mobile": "~5.16.1",
+    "antd-mobile-icons": "~0.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

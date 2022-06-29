@@ -1,3 +1,4 @@
+import { CloseOutline, LeftOutline } from 'antd-mobile-icons';
 import React, { PropsWithChildren, ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import s from './Header.module.css';
@@ -13,16 +14,16 @@ const Left: React.FC = () => {
   const showHomeButton = getShowHomeButton(location.pathname);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
+    <div className={s.Left}>
       {showBackButton && (
         <div className={s.Button} onClick={() => window.history.back()}>
-          Back
+          <LeftOutline />
         </div>
       )}
 
       {showHomeButton && (
         <div className={s.Button} onClick={() => navigate('/')}>
-          Home
+          <CloseOutline />
         </div>
       )}
     </div>
