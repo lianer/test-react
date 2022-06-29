@@ -61,7 +61,7 @@ const Menu: React.FC<PropsWithChildren<{ menu: ReactNode }>> = ({ menu }) => {
   return <div className={s.Menu}>{menu}</div>;
 };
 
-const Header: React.FC<PropsWithChildren<{ menu?: ReactNode; children: string }>> = React.memo(
+const Header: React.FC<PropsWithChildren<{ menu?: ReactNode }>> = React.memo(
   ({ children, menu }) => {
     return (
       <>
