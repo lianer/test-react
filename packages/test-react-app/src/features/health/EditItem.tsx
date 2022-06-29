@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectHealth, updateItem } from './healthSlice';
 import Header from '../../components/header/Header';
+import s from './EditItem.module.css';
 
 const EditItem: React.FC = () => {
   const id = +useParams().id!;
@@ -32,10 +33,6 @@ const EditItem: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{target.title}范围设置</title>
-      </Helmet>
-
       <Header>{target.title}范围设置</Header>
 
       <Form layout="vertical" mode="card">
@@ -48,12 +45,12 @@ const EditItem: React.FC = () => {
         </Form.Item>
       </Form>
 
-      <Space direction="horizontal" block style={{ padding: 12, '--gap': '16px' }}>
-        <Button color="default" fill="outline" onClick={onCancel}>
-          取消
-        </Button>
-        <Button color="primary" fill="solid" onClick={onConfirm} style={{ width: '10ch' }}>
+      <Space direction="vertical" block className={s.Actions}>
+        <Button block color="primary" fill="solid" onClick={onConfirm} className={s.Confirm}>
           保存
+        </Button>
+        <Button block color="default" fill="none" onClick={onCancel}>
+          取消
         </Button>
       </Space>
     </>

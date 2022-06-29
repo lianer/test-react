@@ -9,10 +9,20 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
+.Title {
+  font-size: 18px;
+}
+
 .Left {
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+
+.Menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
 }
 
 .Button {

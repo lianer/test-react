@@ -1,5 +1,6 @@
 import { CloseOutline, LeftOutline } from 'antd-mobile-icons';
 import React, { PropsWithChildren, ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
 import { useLocation, useNavigate } from 'react-router-dom';
 import s from './Header.module.css';
 
@@ -44,13 +45,8 @@ const Left: React.FC = () => {
 //       }
 //     }
 //   }
-
 //   return (
-//     <div
-//       style={{
-//         fontSize: 18,
-//       }}
-//     >
+//     <div className={s.Title}>
 //       {title}
 //     </div>
 //   );
@@ -58,31 +54,27 @@ const Left: React.FC = () => {
 
 // 方式二，每个路由组件单独引入 Header
 const Title: React.FC<{ title: ReactNode }> = ({ title }) => {
-  return <div style={{ fontSize: 18 }}>{title}</div>;
+  return <div className={s.Title}>{title}</div>;
 };
 
 const Menu: React.FC<PropsWithChildren<{ menu: ReactNode }>> = ({ menu }) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row-reverse',
-      }}
-    >
-      {menu}
-    </div>
-  );
+  return <div className={s.Menu}>{menu}</div>;
 };
 
-const Header: React.FC<PropsWithChildren<{ menu?: ReactNode }>> = React.memo(
+const Header: React.FC<PropsWithChildren<{ menu?: ReactNode; children: string }>> = React.memo(
   ({ children, menu }) => {
     return (
-      <header className={s.Header}>
-        <Left />
-        <Title title={children} />
-        <Menu menu={menu} />
-      </header>
+      <>
+        <Helmet>
+          <title>{children}</title>
+        </Helmet>
+
+        <header className={s.Header}>
+          <Left />
+          <Title title={children} />
+          <Menu menu={menu} />
+        </header>
+      </>
     );
   }
 );

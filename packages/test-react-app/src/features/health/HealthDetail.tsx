@@ -6,13 +6,14 @@ import ListItem from '../../components/listItem/ListItem';
 import Portlet from '../../components/portlet/Portlet';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { selectHealth, updateItem, HealthIndicator } from './healthSlice';
+import s from './HealthDetail.module.css';
 
 const Range: React.FC<{ min: number; max: number }> = ({ min, max }) => {
   return (
-    <div style={{ display: 'flex', textAlign: 'right', fontSize: 16 }}>
-      <span style={{ display: 'block', width: '5ch', textAlign: 'left' }}>{min}</span>
-      <span style={{ display: 'block' }}>~</span>
-      <span style={{ display: 'block', width: '5ch' }}>{max}</span>
+    <div className={s.Range}>
+      <span>{min}</span>
+      <span>~</span>
+      <span>{max}</span>
     </div>
   );
 };
@@ -48,11 +49,7 @@ const HealthDetail: React.FC = () => {
 
       <Portlet title="指标范围设置">
         {list.map((item) => (
-          <Link
-            key={item.id}
-            to={`/health-detail/edit-item/${item.id}`}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
+          <Link key={item.id} to={`/health-detail/edit-item/${item.id}`} className={s.Link}>
             <ListItem title={item.title}>
               <Range min={item.min} max={item.max} />
             </ListItem>
